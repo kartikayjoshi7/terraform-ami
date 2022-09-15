@@ -1,9 +1,9 @@
 resource "aws_security_group" "sg" {
   name        = "sg_${var.COMPONENT}_ami"
   description = "sg_${var.COMPONENT}_ami"
-  vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
 
-  {
+
+  ingress {
     description      = "SSH"
     from_port        = 22
     to_port          = 22
